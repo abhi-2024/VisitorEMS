@@ -10,7 +10,7 @@ public class connectionProvider {
 		try {
 			 if(con==null) {
 				 Class.forName("com.mysql.cj.jdbc.Driver");
-				 con= DriverManager.getConnection("jdbc:mysql://localhost:3306/visitorentry\", \"root\", \"root");
+				 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/visitorentry", "root", "root");
 			 }
 		} catch (Exception e) {
 			// TODO: handle exception
