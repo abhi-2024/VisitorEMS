@@ -23,7 +23,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="dashboard.jsp"><i class="fa-regular fa-user"></i> Profile </a>
+          <a class="nav-link active" aria-current="page" href="login.jsp"><i class="fa-regular fa-user"></i> Profile </a>
         </li>
       </ul>
     </div>
