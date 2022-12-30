@@ -24,9 +24,9 @@ admin a = (admin) session.getAttribute("currentUser");
 					class="nav-link active dropdown-toggle" href="#" role="button"
 					data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-person-walking-luggage"></i> Visitors </a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">New Visitor <i class="fa-solid fa-person-circle-exclamation"></i></a></li>
+						<li><a class="dropdown-item" href="newVisitor.jsp">New Visitor <i class="fa-solid fa-person-circle-exclamation"></i></a></li>
 						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" href="#">View Visitors <i class="fa-solid fa-person-circle-check"></i></a></li>
+						<li><a class="dropdown-item" href="viewVisitors.jsp">View Visitors <i class="fa-solid fa-person-circle-check"></i></a></li>
 					</ul></li>
 
 
