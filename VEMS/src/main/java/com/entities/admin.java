@@ -1,10 +1,13 @@
 package com.entities;
 
+import java.sql.Timestamp;
+
 public class admin {
   int id;
   String name;
   String email;
   String password;
+  Timestamp rDate;
 public admin(String name, String email, String password) {
 	super();
 	this.name = name;
@@ -13,13 +16,15 @@ public admin(String name, String email, String password) {
 }
 
 
-public admin(int id, String name, String email, String password) {
+public admin(int id, String name, String email, String password, Timestamp rDate) {
 	super();
 	this.id = id;
 	this.name = name;
 	this.email = email;
 	this.password = password;
+	this.rDate = rDate;
 }
+
 
 
 public admin() {
@@ -64,6 +69,16 @@ public String getPassword() {
 
 public void setPassword(String password) {
 	this.password = password;
+}
+
+
+public Timestamp getrDate() {
+	return rDate;
+}
+
+
+public void setrDate(Timestamp rDate) {
+	this.rDate = rDate;
 }
   
   

@@ -1,5 +1,9 @@
+<%@page import="com.entities.msg"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<% 
+ msg m = (msg)session.getAttribute("MSG");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,43 +21,58 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<main class="d-flex align-items-center" style="height: 80vh;">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 offset-4">
-				<div class="card">
+	<div class="d-flex align-items-center" style="height: 80vh;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 offset-4">
+					<div class="card">
 
-					<div class="card-header text-white text-center"
-						style="background-color: #4F29C8;">
-						<span class="fa fa-sign-in fa-2x"></span>
-						<h2>LOGIN</h2>
-					</div>
-					<div class="card-body">
-						<form>
-							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">Email
-									address</label> <input type="email" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp">
-								<div id="emailHelp" class="form-text">We'll never share
-									your email with anyone else.</div>
-							</div>
-							<div class="mb-3">
-								<label for="exampleInputPassword1" class="form-label">Password</label>
-								<input type="password" class="form-control"
-									id="exampleInputPassword1">
-							</div>
-							<div class="text-center"><button type="submit" class="btn btn-primary">Login</button></div>
-						</form>
+						<div class="card-header text-white text-center"
+							style="background-color: #4F29C8;">
+							<span class="fa fa-sign-in fa-2x"></span>
+							<h2>LOGIN</h2>
+						</div>
+						<%						 
+						 if(m!=null){
+						%>
 						
-						<div class="text-center">
-						<a href="signup.jsp" class="link-primary">Create an account</a>
+						<div class="alert <%=m.getCssClass() %>" role="alert">
+						 <%= m.getContent() %>
+						</div>
+						
+						<%
+						 session.removeAttribute("MSG");
+						 } %>
+						<div class="card-body">
+
+
+							<form action="loginServ" method="post">
+
+								<div class="mb-3">
+									<label for="exampleInputEmail1" class="form-label">Email
+										address</label> <input type="email" name="loginEmail"
+										class="form-control" id="exampleInputEmail1">
+								</div>
+
+								<div class="mb-3">
+									<label for="exampleInputPassword1" class="form-label">Password</label>
+									<input name="loginPassword" type="password"
+										class="form-control" id="exampleInputPassword1">
+								</div>
+								<div class="text-center">
+									<button type="submit" class="btn btn-primary">Login</button>
+								</div>
+							</form>
+
+							<div class="text-center">
+								<a href="signup.jsp" class="link-primary">Create an account</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</main>
 </body>
 
 
