@@ -1,3 +1,9 @@
+<%@page import="com.entities.admin"%>
+
+<%
+ admin a = (admin)session.getAttribute("currentUser");
+%>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.jsp">
@@ -22,9 +28,21 @@
             <li><a class="dropdown-item" href="#">View Visitors</a></li>
           </ul>
         </li>
+        <% if(a!=null){ %>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="login.jsp"><i class="fa-regular fa-user"></i> Profile </a>
+          <a class="nav-link active" aria-current="page" href="login.jsp"><i class="fa-solid fa-shield"></i> Profile </a>
         </li>
+        <% 
+        }
+        else{
+        %>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="login.jsp"><i class="fa-solid fa-shield"></i> Login </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="signup.jsp"><i class="fa fa-user-plus"></i> Sign Up </a>
+        </li>
+        <% } %>
       </ul>
     </div>
   </div>
