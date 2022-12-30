@@ -34,6 +34,7 @@ public class adminDao {
 		return f;
 	}
 
+
 	public admin getAdminDetails(String email, String password) {
 		admin ad = null;
 		try {
@@ -58,5 +59,27 @@ public class adminDao {
 			e.printStackTrace();
 		}
 		return ad;
+	}
+	
+	public boolean updateAdmin(admin am) {
+		boolean f = false;
+		
+		try {
+			String s = "update admin set adminName=?, adminEmail=?, adminPassword=? where idadmin=?";
+			PreparedStatement stmt = con.prepareStatement(s);
+			stmt.setString(1, am.getName());
+			stmt.setString(2, am.getEmail());
+			stmt.setString(3, am.getPassword());
+			stmt.setInt(4, am.getId());
+			
+			stmt.executeUpdate();
+			
+			f=true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return f;
 	}
 }
