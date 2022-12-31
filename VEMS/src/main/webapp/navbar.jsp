@@ -38,13 +38,19 @@ admin a = (admin) session.getAttribute("currentUser");
 				<li class="nav-item"><a data-bs-toggle="modal" href="#"
 					data-bs-target="#profileModal" class="nav-link active"
 					aria-current="page"><i class="fa-solid fa-user"></i> <%=a.getName()%>
-				</a> <!-- Modal Start --> <!-- Modal -->
+				</a> 
+				
+				
+				<!-- Modal Start --> 
+				
+				
+				<!-- Modal -->
 					<div class="modal fade" id="profileModal" tabindex="-1"
 						aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header bg-dark text-white">
-									<h1 class="modal-title fs-5" id="exampleModalLabel">
+						<div class="modal-dialog">
+							<div class="modal-content" style="background-color: #212529; color: white;">
+								<div class="modal-header container text-center bg-dark text-white">
+									<h1 class="modal-title fs-4" id="exampleModalLabel">
 										Profile View</h1>
 									<button type="button" class="btn-close" data-bs-dismiss="modal"
 										aria-label="Close"></button>
@@ -57,7 +63,7 @@ admin a = (admin) session.getAttribute("currentUser");
 										<br>
 
 										<div id="profileDetails">
-											<table class="table">
+											<table class="table table-hover table-dark">
 
 												<tbody>
 													<tr>
@@ -89,22 +95,23 @@ admin a = (admin) session.getAttribute("currentUser");
 										<div style="display: none;" id="profileEdit">
 
 											<form action="updateServlet" id="updateForm" method="post">
+											 <div>
 												<table class="table">
 
 													<tbody>
 														<tr>
-															<th scope="row">Name</th>
+															<th scope="row" style="color: white;">Name</th>
 															<td><input name="newName" type="text"
 																class="form-control" value="<%=a.getName()%>"></td>
 														</tr>
 
 														<tr>
-															<th scope="row">Email</th>
+															<th scope="row" style="color: white;">Email</th>
 															<td><input name="newEmail" type="email"
 																class="form-control" value="<%=a.getEmail()%>"></td>
 														</tr>
 														<tr>
-															<th scope="row">Password</th>
+															<th scope="row" style="color: white;">Password</th>
 															<td><input name="newPassword" type="text"
 																class="form-control" value="<%=a.getPassword()%>"></td>
 														</tr>
@@ -113,6 +120,7 @@ admin a = (admin) session.getAttribute("currentUser");
 												<div class="container text-center">
 													<button type="submit" class="btn btn-primary">Save</button>
 												</div>
+											  </div>
 											</form>
 										</div>
 									</div>
@@ -123,7 +131,7 @@ admin a = (admin) session.getAttribute("currentUser");
 									<button type="button" id="edit" class="btn btn-secondary"><i class="fa-solid fa-user-pen"></i> Edit</button>
 									
 											<div class="text-center">
-												<a class="btn btn-primary" aria-current="page"
+												<a class="btn btn-primary" id="signOut" aria-current="page"
 													href="signoutServ"><i class="fa fa-door-open"></i> Sign
 													Out </a>
 											</div>
@@ -166,6 +174,8 @@ admin a = (admin) session.getAttribute("currentUser");
 
 				$('#profileEdit').show();
 
+				$('#signOut').hide();
+				
 				$('#exampleModalLabel').text("Profile Edit");
 
 				stat = true;
@@ -175,6 +185,8 @@ admin a = (admin) session.getAttribute("currentUser");
 				$('#profileDetails').show();
 
 				$('#profileEdit').hide();
+				
+				$('#signOut').show();
 
 				$('#exampleModalLabel').text("Profile View");
 
