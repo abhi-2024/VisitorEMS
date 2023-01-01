@@ -1,3 +1,7 @@
+<%@page import="com.entities.visitors"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.helper.connectionProvider"%>
+<%@page import="com.dao.visitorDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,7 +21,66 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<% 
+ admin ami =(admin)session.getAttribute("currentUser");
+ if(ami!=null){
+%>
+<div class="container">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Visitor's Name</th>
+      <th scope="col">Visitor's Email</th>
+      <th scope="col">Host</th>
+      <th scope="col">Entry Date & Time</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%
+    int count=1;
 
+    visitorDao d = new visitorDao(connectionProvider.getConnection());
+    ArrayList<visitors> list1 = d.fetchAllVisitors();
+    for(visitors vv : list1){
+  %>
+    <tr>
+      <td><%= count++ %></td>
+      <td><%= vv.getVname() %></td>
+      <td><%= vv.getVemail() %></td>
+      <td><%= vv.getHname() %></td>
+      <td><%= vv.geteDate() %></td>
+      <td>
+        <form action="visitorDetailServ" method="post">
+          <input type="text" style="display: none;" name="did" value="<%=vv.getVid()%>">
+          <button title="click to view the details" style="background-color:white; color: grey;" class="btn btn-secondary"><i class="fa-solid fa-eye"></i></button>
+        </form> 
+       </td>
+      <td>
+      <form method="post" action="delVisServ">
+       <input style="display: none;" type="text" name="id" value="<%= vv.getVid()%>">
+      <button title="click to delete the visitor" style="background-color:white; color: red;" type="submit" class="btn btn-secondary">
+      <i class="fa-solid fa-trash"></i></button> 
+      </form>
+
+      </td>
+    </tr>
+    <%  }  %>
+  </tbody>
+</table>
+ <% 
+   }  
+  else{
+ %>
+ <h1 class="text-center">Kindly login to view all of the visitors</h1>
+ <div class="text-center"><a href="login.jsp" style="background-color: #4F29C8;" class="btn text-white">LOGIN</a></div>
+
+</div>
+ <%
+    }
+ %>
 
 
 

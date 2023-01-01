@@ -1,7 +1,5 @@
 package com.entities;
 
-import java.sql.Timestamp;
-
 public class visitors {
 	String vname;
 	String gender;
@@ -13,10 +11,46 @@ public class visitors {
 	String vreason;
 	int vno;
 	int vid;
-	Timestamp eDate;
+	String eDate;
+	String exDate;
+	
 	
 	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
-			String vreason, int vno, int vid, Timestamp eDate) {
+			String vreason, int vno, String eDate) {
+		super();
+		this.vname = vname;
+		this.gender = gender;
+		this.vemail = vemail;
+		this.address = address;
+		this.vocc = vocc;
+		this.hname = hname;
+		this.hocc = hocc;
+		this.vreason = vreason;
+		this.vno = vno;
+		this.eDate = eDate;
+	}
+ 
+	
+
+
+	public visitors(String vname, String vemail, String address, String vocc, String hname, String hocc, String vreason,
+			int vno) {
+		super();
+		this.vname = vname;
+		this.vemail = vemail;
+		this.address = address;
+		this.vocc = vocc;
+		this.hname = hname;
+		this.hocc = hocc;
+		this.vreason = vreason;
+		this.vno = vno;
+	}
+
+	 
+	
+	
+	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
+			String vreason, int vno, int vid, String eDate, String exDate) {
 		super();
 		this.vname = vname;
 		this.gender = gender;
@@ -29,6 +63,39 @@ public class visitors {
 		this.vno = vno;
 		this.vid = vid;
 		this.eDate = eDate;
+		this.exDate = exDate;
+	}
+
+
+
+
+	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
+			String vreason, int vno, int vid, String eDate) {
+		super();
+		this.vname = vname;
+		this.gender = gender;
+		this.vemail = vemail;
+		this.address = address;
+		this.vocc = vocc;
+		this.hname = hname;
+		this.hocc = hocc;
+		this.vreason = vreason;
+		this.vno = vno;
+		this.vid = vid;
+		this.eDate = eDate;
+	}
+
+
+
+
+
+	public visitors(String vname, String vemail, String hname, String eDate, int vid) {
+		super();
+		this.vname = vname;
+		this.vemail = vemail;
+		this.hname = hname;
+		this.eDate = eDate;
+		this.vid = vid;
 	}
 
 	public visitors() {
@@ -129,14 +196,23 @@ public class visitors {
 		this.vid = vid;
 	}
 
-	public Timestamp geteDate() {
+	public String geteDate() {
 		return eDate;
 	}
 
-	public void seteDate(Timestamp eDate) {
+	public void seteDate(String eDate) {
 		this.eDate = eDate;
 	}
-	
-	
+
+
+
+
+	public String getExDate() {
+		return exDate;
+	}
+
+	public void setExDate(String exDate) {
+		this.exDate = exDate;
+	}	
 	
 }

@@ -28,7 +28,7 @@
 					<div class="card">
 
 						<div class="card-header text-white text-center"
-							style="background-color: #4F29C8;">
+							style="background-color: #212529;">
 							<span class="fa fa-sign-in fa-2x"></span>
 							<h2>LOGIN</h2>
 						</div>

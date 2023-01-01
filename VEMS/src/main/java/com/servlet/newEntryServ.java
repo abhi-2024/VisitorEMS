@@ -45,11 +45,12 @@ public class newEntryServ extends HttpServlet {
 		String hname= request.getParameter("hName");
 		String hocc= request.getParameter("hOccupation");
 		String vreason= request.getParameter("vReason");
+		String eDate= request.getParameter("eDate");
 		int vno = Integer.parseInt(request.getParameter("vNumber"));
 		
 		PrintWriter out = response.getWriter();
 		
-		visitors visitor = new visitors(vname, gender, vemail, address, vocc, hname, hocc, vreason, vno);
+		visitors visitor = new visitors(vname, gender, vemail, address, vocc, hname, hocc, vreason, vno, eDate);
 		
 		visitorDao dao = new visitorDao(connectionProvider.getConnection());
 		

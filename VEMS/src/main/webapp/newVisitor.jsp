@@ -72,8 +72,8 @@
                             <input type="radio" id="female" name="gender" value="Female">
                             <label for="female">Female</label><br>
                             
-                            <input type="radio" id="none" name="gender" value="Not mentioned">
-                            <label for="none">Prefer not to say</label>                            
+                            <input type="radio" id="none" name="gender" value="Others">
+                            <label for="none">Others</label>                            
                         </div>
                         
 						<div class="mb-3">
@@ -113,7 +113,10 @@
 							<label for="number" class="form-label">Visit number</label>
 							<input name="vNumber" type="number" class="form-control" id="number" value=0>
 						</div>
-
+                         <div class="mb-3">
+							<label for="EDate" class="form-label">Entry Time</label>
+							<input name="eDate" type="datetime-local" class="form-control" id="EDate">
+						</div>
 						<br>
 						<div class="container text-center" id="loader"
 							style="display: none;">

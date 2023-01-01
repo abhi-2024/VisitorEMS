@@ -18,8 +18,6 @@ admin a = (admin) session.getAttribute("currentUser");
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="dashboard.jsp"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link active dropdown-toggle" href="#" role="button"
 					data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-person-walking-luggage"></i> Visitors </a>
@@ -37,7 +35,7 @@ admin a = (admin) session.getAttribute("currentUser");
 
 				<li class="nav-item"><a data-bs-toggle="modal" href="#"
 					data-bs-target="#profileModal" class="nav-link active"
-					aria-current="page"><i class="fa-solid fa-user"></i> <%=a.getName()%>
+					aria-current="page"><i class="fa-solid fa-circle-user"></i> <%=a.getName()%>
 				</a> 
 				
 				
