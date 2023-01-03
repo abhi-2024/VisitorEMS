@@ -11,19 +11,25 @@
 </head>
 <body>
   <%@include file="navbar.jsp" %>
-  <div class="container shadow p-3 mb-5 bg-body rounded">
+  <div class="container mt-4">
     <h3 class="text-center font-monospace"><u>VISITOR ENTRY MANAGEMENT</u></h3>
+    <br>
+     <div class="text-center">
     Visitor entry management refers to the process of controlling and tracking the entry and exit of visitors to a facility.
     This can be done using a variety of methods, such as signing in at a reception desk, using a badge or pass to access restricted areas, and recording visitor information in a log book. 
     The goal of visitor entry management is to ensure the safety and security of a facility, as well as to track who has been on the premises and when.
-    It is often used in offices, schools, hospitals, and other types of businesses or organizations.
+    It is often used in offices, schools, hospitals, and other types of businesses or organizations.<br>
     A visitor entry management system is a system that is used to track and manage the entry and exit of visitors to a facility or premises.
     It typically includes a registration process for visitors, a system for issuing badges or other identification, and a record of the dates and times of entry and exit for each visitor.
-    The primary goal of a visitor entry management system is to provide security and control over who has access to a facility.
+    The primary goal of a visitor entry management system is to provide security and control over who has access to a facility.<br>
     This can be important for a variety of reasons, including ensuring the safety of employees and other occupants of the facility, protecting sensitive information or assets, and complying with regulations or policies.
     There are many different types of visitor entry management systems available, ranging from simple sign-in sheets to more sophisticated electronic systems that use biometric data or other methods to identify and track visitors. 
     The specific features and capabilities of a visitor entry management system will depend on the needs of the facility and the level of security required.
+     </div>
+     <br>
+     <div class="text-center lead">Please <mark><u><a href="login.jsp">login</a></u></mark> to get access to all the features.</div>
   </div>
+  
 </body>
 
 <!-- scripts -->
