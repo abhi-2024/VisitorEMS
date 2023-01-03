@@ -100,13 +100,27 @@
 						</div> 
 						
                          <div class="mb-3">
-							<label for="hostOccupation" class="form-label">Host's occupation</label>
-							<input name="hOccupation" type="text" class="form-control" id="hostOccupation">
+							<label for="hostOccupation" class="form-label">Department</label>
+							<select name="hOccupation" class="form-select" id="hostOccupation">
+							  <option selected="selected" disabled>--: Please Select :--</option>
+							  <option value="Accounts">Accounts</option>
+							  <option value="Management">Management</option>
+							  <option value="Research & Development">Research & Development</option>
+							  <option value="Sales">Sales</option>
+							  <option value="Others">Others</option>
+							</select>	
 						</div>
 						
                          <div class="mb-3">
 							<label for="reason" class="form-label">Reason to visit</label>
-							<input name="vReason" type="text" class="form-control" id="reason">
+							<select name="vReason" class="form-select" id="reason">
+							  <option selected="selected" disabled="disabled"> --: Please Select :--</option>
+							  <option>Client Meeting</option>
+							  <option>Interview</option>
+							  <option>Item Delivery</option>
+							  <option>Authorised Visit</option>
+							  <option>Others</option>
+							</select>
 						</div>
 												                         
                          <div class="mb-3">

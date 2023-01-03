@@ -27,7 +27,10 @@
     The specific features and capabilities of a visitor entry management system will depend on the needs of the facility and the level of security required.
      </div>
      <br>
+     <% admin a1 = (admin) session.getAttribute("currentUser");
+    		if(a1==null){%>
      <div class="text-center lead">Please <mark><u><a href="login.jsp">login</a></u></mark> to get access to all the features.</div>
+     <% } %>
   </div>
   
 </body>

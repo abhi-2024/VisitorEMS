@@ -120,7 +120,7 @@
 											<th scope="row">Gender</th>
 											<td>
 											  <select name="g">
-											    <option selected="selected" value="<%=v1.getGender()%>"></option>
+											    <option selected="selected" style="display: none;" value="<%=v1.getGender()%>"><%=v1.getGender()%></option>
 											    <option value="Male">Male</option>
 											    <option value="Female">Female</option>
 											    <option value="Others">Others</option>

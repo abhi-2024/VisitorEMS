@@ -55,13 +55,13 @@
       <td>
         <form action="visitorDetailServ" method="post">
           <input type="text" style="display: none;" name="did" value="<%=vv.getVid()%>">
-          <button title="click to view the details" style="background-color:white; color: grey;" class="btn btn-secondary"><i class="fa-solid fa-eye"></i></button>
+          <button title="view details" style="background-color:white; color: grey;" class="btn btn-secondary"><i class="fa-solid fa-eye"></i></button>
         </form> 
        </td>
       <td>
       <form method="post" action="delVisServ">
        <input style="display: none;" type="text" name="id" value="<%= vv.getVid()%>">
-      <button title="click to delete the visitor" style="background-color:white; color: red;" type="submit" class="btn btn-secondary">
+      <button title="delete the entity" style="background-color:white; color: red;" type="submit" class="btn btn-secondary">
       <i class="fa-solid fa-trash"></i></button> 
       </form>
 
