@@ -51,7 +51,7 @@
       <td><%= vv.getVname() %></td>
       <td><%= vv.getVemail() %></td>
       <td><%= vv.getHname() %></td>
-      <td><%= vv.geteDate() %></td>
+      <td><%= vv.geteDate() %></td>      
       <td>
         <form action="visitorDetailServ" method="post">
           <input type="text" style="display: none;" name="did" value="<%=vv.getVid()%>">

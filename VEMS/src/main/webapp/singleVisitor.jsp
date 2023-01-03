@@ -1,4 +1,7 @@
 <%@page import="com.entities.visitors"%>
+<% 
+  admin ad = (admin)session.getAttribute("currentUser");
+%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,8 +21,9 @@
 	<%@include file="navbar.jsp"%>
 
 	<%
-	visitors v1 = (visitors) session.getAttribute("currentVisitor");
-	if (v1 != null) {
+	    visitors v1 = (visitors) session.getAttribute("currentVisitor");
+	    if (v1 != null) {
+	    	
 	%>
 
 	<div class="container mt-3">
@@ -116,10 +120,10 @@
 											<th scope="row">Gender</th>
 											<td>
 											  <select name="g">
-											    <option selected="selected" disabled value="<%=v1.getGender()%>"><%= v1.getGender() %></option>
+											    <option selected="selected" value="<%=v1.getGender()%>"></option>
 											    <option value="Male">Male</option>
 											    <option value="Female">Female</option>
-											    <option value="others">Others</option>
+											    <option value="Others">Others</option>
 											  </select>
 											</td>
 										</tr>
@@ -194,7 +198,9 @@
 	<%
 	} else {
 	%>
-
+       <div class="container">
+         <%@include file="Error_Page.jsp" %>
+       </div>
 	<%
 	}
 	/* 	session.removeAttribute("currentVisitor"); */

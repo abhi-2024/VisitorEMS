@@ -7,7 +7,7 @@ admin a = (admin) session.getAttribute("currentUser");
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="index.jsp"> <i
+		<a class="navbar-brand font-monospace" href="index.jsp"> <i
 			class="fa-solid fa-users"></i> Visitor Entry
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
