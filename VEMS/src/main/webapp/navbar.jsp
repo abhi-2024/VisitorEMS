@@ -207,7 +207,7 @@ admin a = (admin) session.getAttribute("currentUser");
 					console.log(data);
 					
 					 if(data.trim()==='Done!'){
-						 swal("Updated successfully !! Relogin to view update")
+						 swal("Updated successfully !! Kindly Relogin")
 						 .then((value) => {
 						   swal("Loging out.....!!")
 						   window.location = "signoutServ"

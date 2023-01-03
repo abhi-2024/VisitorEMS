@@ -60,48 +60,46 @@
 			
 						<div class="mb-3">
 							<label for="name" class="form-label">Visitor's name</label> <input
-								type="text" class="form-control" id="name" name="vName">
+								required type="text" class="form-control" id="name" name="vName">
 						</div>
 						
 						<div class="mb-3">
 						  <label class="form-label">Select gender</label><br>
-						  
-						    <input type="radio" id="male" name="gender" value="Male">
-                            <label for="male">Male</label><br>
-                            
-                            <input type="radio" id="female" name="gender" value="Female">
-                            <label for="female">Female</label><br>
-                            
-                            <input type="radio" id="none" name="gender" value="Others">
-                            <label for="none">Others</label>                            
+						   
+						   <select required class="form-select" name="gender">
+						   <option selected="selected" disabled="disabled"> --: Please Select :--</option>
+						    <option value="Male">Male</option>
+						    <option value="Female">Female</option>
+						    <option value="Others">Others</option>
+						   </select>                            
                         </div>
                         
 						<div class="mb-3">
 							<label for="email" class="form-label">Visitor's  email</label>
-							<input name="vEmail" type="email" class="form-control"
+							<input required name="vEmail" type="email" class="form-control"
 								id="email">
 						</div>
 
 						<div class="mb-3">
                           <label for="address" class="form-label">Visitor's  address</label>
-							<textarea name="vAddress" id="address" class="form-control" rows="3"></textarea>
+							<textarea required name="vAddress" id="address" class="form-control" rows="3"></textarea>
 
 						</div>
 
                          <div class="mb-3">
 							<label for="occup" class="form-label">Visitor's  occupation</label>
-							<input name="vOccupation" type="text" class="form-control" id="occup">
+							<input required name="vOccupation" type="text" class="form-control" id="occup">
 						</div>
 
                           
                          <div class="mb-3">
 							<label for="hostName" class="form-label">Host's name</label>
-							<input name="hName" type="text" class="form-control" id="hostName">
+							<input required name="hName" type="text" class="form-control" id="hostName">
 						</div> 
 						
                          <div class="mb-3">
 							<label for="hostOccupation" class="form-label">Department</label>
-							<select name="hOccupation" class="form-select" id="hostOccupation">
+							<select required name="hOccupation" class="form-select" id="hostOccupation">
 							  <option selected="selected" disabled>--: Please Select :--</option>
 							  <option value="Accounts">Accounts</option>
 							  <option value="Management">Management</option>
@@ -113,23 +111,23 @@
 						
                          <div class="mb-3">
 							<label for="reason" class="form-label">Reason to visit</label>
-							<select name="vReason" class="form-select" id="reason">
+							<select required name="vReason" class="form-select" id="reason">
 							  <option selected="selected" disabled="disabled"> --: Please Select :--</option>
-							  <option>Client Meeting</option>
-							  <option>Interview</option>
-							  <option>Item Delivery</option>
-							  <option>Authorised Visit</option>
-							  <option>Others</option>
+							  <option value="Client Meeting">Client Meeting</option>
+							  <option value="Interview">Interview</option>
+							  <option value="Item Delivery">Item Delivery</option>
+							  <option value="Authorised Visit">Authorised Visit</option>
+							  <option value="Others">Others</option>
 							</select>
 						</div>
 												                         
                          <div class="mb-3">
 							<label for="number" class="form-label">Visit number</label>
-							<input name="vNumber" type="number" class="form-control" id="number" value=0>
+							<input name="vNumber" required type="number" class="form-control" id="number" value=0>
 						</div>
                          <div class="mb-3">
 							<label for="EDate" class="form-label">Entry Time</label>
-							<input name="eDate" type="datetime-local" class="form-control" id="EDate">
+							<input name="eDate" required type="datetime-local" class="form-control" id="EDate">
 						</div>
 						<br>
 						<div class="container text-center" id="loader"
