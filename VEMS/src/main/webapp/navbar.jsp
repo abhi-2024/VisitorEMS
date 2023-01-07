@@ -31,8 +31,15 @@ admin a = (admin) session.getAttribute("currentUser");
 				<%
 				if (a != null) {
 				%>
-
-
+                <li class="nav-item dropdown"><a
+					class="nav-link active dropdown-toggle" href="#" role="button"
+					data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-sharp fa-solid fa-briefcase"></i> Employees </a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="addEmployee.jsp">New Employee <i class="fa-solid fa-champagne-glasses"></i></a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="viewEmployees.jsp">View Employees <i class="fa-sharp fa-solid fa-circle-info"></i></a></li>
+					</ul></li>
+					
 				<li class="nav-item"><a data-bs-toggle="modal" href="#"
 					data-bs-target="#profileModal" class="nav-link active"
 					aria-current="page"><i class="fa-solid fa-circle-user"></i> <%=a.getName()%>

@@ -1,18 +1,15 @@
-<%@page import="com.entities.visitors"%>
-<% 
-  admin ad = (admin)session.getAttribute("currentUser");
-%>
+<%@page import="com.entities.employee"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Visitor Detail</title>
+<title>View Employee</title>
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
-	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -21,12 +18,11 @@
 	<%@include file="navbar.jsp"%>
 
 	<%
-	    visitors v1 = (visitors) session.getAttribute("currentVisitor");
-	    if (v1 != null) {
-	    	
+	employee e5 = (employee) session.getAttribute("currentEmp");
+	if (e5 != null) {
 	%>
 
-	<div class="container mt-3">
+	<div class="container mt-5">
 		<div class="row">
 			<div class="col-md-5 offset-3">
 				<div class="card">
@@ -34,7 +30,7 @@
 					<div class="card-header text-white text-center"
 						style="background-color: #212529;">
 						<h2 id="vheading">
-							<i class="fa-solid fa-users-viewfinder"></i> Visitor's Detail
+							<i class="fa-solid fa-users-viewfinder"></i> Employee's Detail
 						</h2>
 					</div>
 
@@ -44,145 +40,100 @@
 							<table class="table">
 								<tbody>
 									<tr>
+										<th scope="row">Employee ID</th>
+										<td><%=e5.getEid()%></td>
+									</tr>
+									<tr>
 										<th scope="row">Name</th>
-										<td><%=v1.getVname()%></td>
+										<td><%=e5.getEname()%></td>
 									</tr>
 
 									<tr>
 										<th scope="row">Email</th>
-										<td><%=v1.getVemail()%></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Gender</th>
-										<td><%=v1.getGender()%></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Address</th>
-										<td><%=v1.getAddress()%></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Occupation</th>
-										<td><%=v1.getVocc()%></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Host Name</th>
-										<td><%=v1.getHname()%></td>
+										<td><%=e5.getEemail()%></td>
 									</tr>
 
 									<tr>
 										<th scope="row">Department</th>
-										<td><%=v1.getHocc()%></td>
+										<td><%=e5.getEdept()%></td>
 									</tr>
 
 									<tr>
-										<th scope="row">Reason to meet</th>
-										<td><%=v1.getVreason()%></td>
+										<th scope="row">Desk</th>
+										<td><%=e5.getEdesk()%></td>
 									</tr>
 
 									<tr>
-										<th scope="row">Visit No</th>
-										<td><%=v1.getVno()%></td>
+										<th scope="row">Attendance</th>
+										<td><%=e5.getEatt()%></td>
 									</tr>
-
-									<tr>
-										<th scope="row">Visitor Id</th>
-										<td><%=v1.getVid()%></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Entry Time</th>
-										<td><%=v1.geteDate()%></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Exit Time</th>
-										<td><%=v1.getExDate()%></td>
-									</tr>									
 								</tbody>
 							</table>
 						</div>
 
 						<div style="display: none;" id="visitorEdit">
 
-							<form action="updateVServ" id="updateForm" method="post">
+							<form action="updateEServ" id="updateForm" method="post">
 								<table class="table">
 
 									<tbody>
 										<tr>
 											<th scope="row">Name</th>
-											<td><input name="n" type="text" value="<%=v1.getVname()%>"></td>
+											<td><input name="n" type="text"
+												value="<%=e5.getEname()%>"></td>
 										</tr>
-										<tr>
-											<th scope="row">Gender</th>
-											<td>
-											  <select name="g">
-											    <option selected="selected" style="display: none;" value="<%=v1.getGender()%>"><%=v1.getGender()%></option>
-											    <option value="Male">Male</option>
-											    <option value="Female">Female</option>
-											    <option value="Others">Others</option>
-											  </select>
-											</td>
-										</tr>
+
 										<tr>
 											<th scope="row">Email</th>
-											<td><input name="e" type="email" value="<%=v1.getVemail()%>"></td>
-										</tr>
-
-
-										<tr>
-											<th scope="row">Address</th>
-											<td><textarea name="a" rows="3"><%=v1.getAddress()%></textarea></td>
+											<td><input name="e" type="email"
+												value="<%=e5.getEemail()%>"></td>
 										</tr>
 
 										<tr>
-											<th scope="row">Occupation</th>
-											<td><input name="o" type="text" value="<%=v1.getVocc()%>"></td>
-										</tr>
 
-										<tr>
-											<th scope="row">Host Name</th>
-											<td><input name="HN" type="text" value="<%=v1.getHname()%>"></td>
-										</tr>
-
-										<tr>
 											<th scope="row">Department</th>
-											<td><input name="d" value="<%=v1.getHocc()%>" type="text"></td>
+											<td><select required name="dep" class="form-select"
+												id="hostOccupation">
+													<option selected="selected" value="<%=e5.getEdept() %>" style="display: none;"><%= e5.getEdept() %></option>
+													<option value="Accounts">Accounts</option>
+													<option value="Management">Management</option>
+													<option value="Research & Development">Research &
+														Development</option>
+													<option value="Sales">Sales</option>
+											</select></td>
+
+										</tr>
+
+
+
+										<tr>
+											<th scope="row">Desk</th>
+											<td><input name="des" value="<%=e5.getEdesk()%>"></td>
 										</tr>
 
 										<tr>
-											<th scope="row">Reason to meet</th>
-											<td><input name="r" value="<%=v1.getVreason()%>" type="text"></td>
-										</tr>
-										
-										<tr>
-										  <th scope="row">Exit Time</th>
-										  <td> <input name="ex" value="<%=v1.getExDate()%>" type="time"> </td>
+											<th scope="row">Attendance</th>
+											<td><select name="att" class="form-select">
+													<option selected="selected" style="display: none" value="<%=e5.getEatt()%>"><%=e5.getEatt() %></option>
+													<option value="Present">Present</option>
+													<option value="Absent">Absent</option>
+											</select></td>
 										</tr>
 
-										<tr>
-											<th scope="row">Visit No</th>
-											<td><input name="vn" value="<%=v1.getVno()%>" type="number">
-											<input name="vid" style="display: none;" value="<%= v1.getVid()%>" type="number">
-											<input name="vdate" style="display: none;" value="<%=v1.geteDate()%>" type="text">
-											</td>
-										</tr>
 									</tbody>
 								</table>
+								<input type="number" style="display: none;" name="id" value="<%= e5.getEid() %>">
 								<div class="text-center">
-								  <button class="btn btn-primary">Save</button>
+									<button class="btn btn-primary">Save</button>
 								</div>
 							</form>
 
 						</div>
 					</div>
 
-					<div class="card-footer">
+					<div class="card-footer" style="background-color: #63e6be">
 						<div class="text-center">
-							<a class="btn btn-primary" id="backToView" href="backServ">Back</a>
+							<a class="btn btn-primary" id="backToView" href="backEServ">Back</a>
 							<button class="btn btn-secondary" type="submit" id="editBtn">Edit</button>
 						</div>
 					</div>
@@ -193,23 +144,21 @@
 
 	</div>
 
-
-
 	<%
 	} else {
 	%>
-       <div class="container">
-         <%@include file="Error_Page.jsp" %>
-       </div>
+	<div class="container">
+	  <h1>Something went wrong !!!</h1>
+	  <h4>Kindly Relogin again!!</h4>
+	  <a class="btn btn-primary" href="login.jsp">LOGIN</a>
+	</div>
+	
 	<%
 	}
-	/* 	session.removeAttribute("currentVisitor"); */
 	%>
-
-
-
-
-	<!-- scripts -->
+	
+</body>
+<!-- scripts -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -230,8 +179,7 @@
 
 
 
-
-	<script>
+<script>
 	$(document).ready(function() {
 		let stat = false;
 		$('#editBtn').click(function() {
@@ -269,7 +217,7 @@
 
 			let form = new FormData(this);
 			$.ajax({
-				url : "updateVServ",
+				url : "updateEServ",
 				type : 'post',
 				data : form,
 				success : function(data, textStatus, jqXHR) {
@@ -279,14 +227,14 @@
 						 swal("Updated successfully !!")
 						 .then((value) => {
 							 swal("Reloading...!!!")
-						   window.location = "singleVisitor.jsp"
+						   window.location = "singleEmployee.jsp"
 						 });
 					   }
 					 if(data.trim()==='Error'){
 						 swal("Check if new data and old data are not same !!")
 						 .then((value) => {
 							 swal("Redirecting to previous page....!!!")
-						   window.location = "singleVisitor.jsp"
+						   window.location = "singleEmployee.jsp"
 						 });
 					   }
 						 else swal(data);
@@ -304,6 +252,4 @@
 		});
 	});
 </script>
-
-</body>
 </html>
