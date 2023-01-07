@@ -18,6 +18,10 @@ admin a = (admin) session.getAttribute("currentUser");
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				
+				<%
+				if (a != null) {
+				%>
 				<li class="nav-item dropdown"><a
 					class="nav-link active dropdown-toggle" href="#" role="button"
 					data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-person-walking-luggage"></i> Visitors </a>
@@ -26,11 +30,6 @@ admin a = (admin) session.getAttribute("currentUser");
 						<li><hr class="dropdown-divider"></li>
 						<li><a class="dropdown-item" href="viewVisitors.jsp">View Visitors <i class="fa-solid fa-person-circle-check"></i></a></li>
 					</ul></li>
-
-
-				<%
-				if (a != null) {
-				%>
                 <li class="nav-item dropdown"><a
 					class="nav-link active dropdown-toggle" href="#" role="button"
 					data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-sharp fa-solid fa-briefcase"></i> Employees </a>

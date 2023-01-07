@@ -29,7 +29,7 @@
      <br>
      <% admin a1 = (admin) session.getAttribute("currentUser");
     		if(a1==null){%>
-     <div class="text-center lead">Please <mark><u><a href="login.jsp">login</a></u></mark> to get access to all the features.</div>
+     <div class="text-center lead">Please <a class="btn btn-primary" href="login.jsp">Login</a> to get access to all the features.</div>
      <% } %>
   </div>
   

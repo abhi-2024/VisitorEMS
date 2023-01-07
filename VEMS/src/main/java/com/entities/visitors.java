@@ -13,8 +13,81 @@ public class visitors {
 	int vid;
 	String eDate;
 	String exDate;
+	String hDesk;
+	String hEmail;
 	
 	
+	
+	
+	
+	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
+			String vreason, int vno, String eDate, String hDesk, String hEmail) {
+		super();
+		this.vname = vname;
+		this.gender = gender;
+		this.vemail = vemail;
+		this.address = address;
+		this.vocc = vocc;
+		this.hname = hname;
+		this.hocc = hocc;
+		this.vreason = vreason;
+		this.vno = vno;
+		this.eDate = eDate;
+		this.hDesk = hDesk;
+		this.hEmail = hEmail;
+	}
+
+
+
+
+	public visitors(String vname, String vemail, String hname, String vreason, int vid, String eDate, String hDesk,
+			String hEmail) {
+		super();
+		this.vname = vname;
+		this.vemail = vemail;
+		this.hname = hname;
+		this.vreason = vreason;
+		this.vid = vid;
+		this.eDate = eDate;
+		this.hDesk = hDesk;
+		this.hEmail = hEmail;
+	}
+
+
+
+
+	public visitors(String vname, String vemail, String hname, int vid, String eDate, String hDesk) {
+		super();
+		this.vname = vname;
+		this.vemail = vemail;
+		this.hname = hname;
+		this.vid = vid;
+		this.eDate = eDate;
+		this.hDesk = hDesk;
+	}
+
+
+
+
+	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
+			String vreason, int vno, String eDate, String hDesk) {
+		super();
+		this.vname = vname;
+		this.gender = gender;
+		this.vemail = vemail;
+		this.address = address;
+		this.vocc = vocc;
+		this.hname = hname;
+		this.hocc = hocc;
+		this.vreason = vreason;
+		this.vno = vno;
+		this.eDate = eDate;
+		this.hDesk = hDesk;
+	}
+
+
+
+
 	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
 			String vreason, int vno, String eDate) {
 		super();
@@ -213,6 +286,35 @@ public class visitors {
 
 	public void setExDate(String exDate) {
 		this.exDate = exDate;
+	}
+
+
+
+
+	public String gethDesk() {
+		return hDesk;
+	}
+
+
+
+
+	public void sethDesk(String hDesk) {
+		this.hDesk = hDesk;
+	}
+
+
+
+
+	public String gethEmail() {
+		return hEmail;
+	}
+
+
+
+
+	public void sethEmail(String hEmail) {
+		this.hEmail = hEmail;
 	}	
+	
 	
 }

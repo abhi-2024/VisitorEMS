@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.dao.employeeDao;
 import com.dao.visitorDao;
+import com.entities.employee;
 import com.entities.msg;
 import com.entities.visitors;
 import com.helper.connectionProvider;
@@ -42,15 +44,22 @@ public class newEntryServ extends HttpServlet {
 		String vemail= request.getParameter("vEmail");
 		String address= request.getParameter("vAddress");
 		String vocc= request.getParameter("vOccupation");
-		String hname= request.getParameter("hName");
-		String hocc= request.getParameter("hOccupation");
 		String vreason= request.getParameter("vReason");
 		String eDate= request.getParameter("eDate");
 		int vno = Integer.parseInt(request.getParameter("vNumber"));
+		int hid = Integer.parseInt(request.getParameter("hID"));
+	
+		employeeDao edao = new employeeDao(connectionProvider.getConnection());
 		
+		employee e11 = edao.fetchEmployeeNameDept(hid);
+		
+		String hocc = e11.getEdept();
+		String hname = e11.getEname();
+		String hDesk = e11.getEdesk();
+		String hEmail = e11.getEemail();
 		PrintWriter out = response.getWriter();
 		
-		visitors visitor = new visitors(vname, gender, vemail, address, vocc, hname, hocc, vreason, vno, eDate);
+		visitors visitor = new visitors(vname, gender, vemail, address, vocc, hname, hocc, vreason, vno, eDate, hDesk, hEmail);
 		
 		visitorDao dao = new visitorDao(connectionProvider.getConnection());
 		

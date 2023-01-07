@@ -136,6 +136,33 @@ public class employeeDao {
     	
     	return f;
     }
+    
+    public employee fetchEmployeeNameDept(int id) {
+    	employee e10 = null;
+    	
+    	try {
+			String s = "select * from employees where idemployees=?";
+			PreparedStatement stmt = con.prepareStatement(s);
+			stmt.setInt(1, id);
+			ResultSet set = stmt.executeQuery();
+			while(set.next()) {
+				e10 = new employee();
+    			e10.setEid(set.getInt("idemployees"));
+    			e10.setEname(set.getString("employeeName"));
+    			e10.setEemail(set.getString("employeeEmail"));
+    			e10.setEdept(set.getString("employeeDept"));
+    			e10.setEdesk(set.getString("employeeDesk"));
+    			e10.setEatt(set.getString("employeePresent"));
+    			e10.setEemail(set.getString("employeeEmail"));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+    	
+    	return e10;
+    }
 
 }
 

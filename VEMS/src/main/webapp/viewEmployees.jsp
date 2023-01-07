@@ -23,9 +23,9 @@
 	<h1 class="text-center mt-3">
 		<u>Employees Details</u>
 	</h1>
-	<% 
-	 admin ad = (admin)session.getAttribute("currentUser");
-	 if(ad!=null){
+	<%
+	admin ad = (admin) session.getAttribute("currentUser");
+	if (ad != null) {
 	%>
 	<div class="d-flex align-items-center" style="height: 40vh;">
 		<div class="container">
@@ -48,6 +48,7 @@
 								<th scope="col">Attendance</th>
 								<th scope="col"></th>
 								<th scope="col"></th>
+								<th scope="col"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -68,10 +69,12 @@
 								<td>
 
 									<form method="post" action="viewEmpServ">
-									
-									   <input style="display: none;" name= "ema" type="text" value="<%= ee.getEemail() %>">
 
-										<button type="submit" class="btn btn-secondary" style="background-color: white;">
+										<input style="display: none;" name="ema" type="text"
+											value="<%=ee.getEemail()%>">
+
+										<button type="submit" class="btn btn-secondary"
+											style="background-color: white;">
 											<i style="color: blue;" class="fa-solid fa-info"></i>
 										</button>
 
@@ -80,6 +83,7 @@
 
 
 								</td>
+
 								<td>
 									<form action="delEmpServ" method="post">
 										<input style="display: none;" name="em" type="text"
@@ -100,15 +104,19 @@
 			</div>
 		</div>
 	</div>
-	
-	<% } else{ %>
+
+	<%
+	} else {
+	%>
 	<h3 class="text-center">Kindly login to view all of the Employees</h3>
 	<div class="text-center">
-			<a href="login.jsp" style="background-color: #4F29C8;"
-				class="btn text-white">LOGIN</a>
+		<a href="login.jsp" style="background-color: #4F29C8;"
+			class="btn text-white">LOGIN</a>
 	</div>
-	
-	<% } %>
+
+	<%
+	}
+	%>
 </body>
 <!-- scripts -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

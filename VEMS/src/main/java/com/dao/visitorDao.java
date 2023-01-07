@@ -21,7 +21,7 @@ public class visitorDao {
 	 
 	  try {
 		
-         String s = "insert into visitors(visitorName,visitorGender,visitorEmail,visitorAddress,visitorOccupation,hostName,hostOccupation,visitorReason,visitorVisitNo,visitorEntryTime) values(?,?,?,?,?,?,?,?,?,?)";
+         String s = "insert into visitors(visitorName,visitorGender,visitorEmail,visitorAddress,visitorOccupation,hostName,hostOccupation,visitorReason,visitorVisitNo,visitorEntryTime,hostDesk,hostEmail) values(?,?,?,?,?,?,?,?,?,?,?,?)";
          PreparedStatement pstmt = con.prepareStatement(s);
          pstmt.setString(1, v.getVname());
          pstmt.setString(2, v.getGender());
@@ -33,6 +33,8 @@ public class visitorDao {
          pstmt.setString(8, v.getVreason());
          pstmt.setInt(9, v.getVno());
          pstmt.setString(10,v.geteDate());
+         pstmt.setString(11, v.gethDesk());
+         pstmt.setString(12, v.gethEmail());
          pstmt.executeUpdate();
          f=true;
 		  
@@ -59,8 +61,11 @@ public class visitorDao {
 			 String vemail = set.getString("visitorEmail");
 			 String edate = set.getString("visitorEntryTime");
 			 String host = set.getString("hostName");
+			 String hDesk = set.getString("hostDesk");
+			 String vreason = set.getString("visitorReason");
+			 String hmail = set.getString("hostEmail");
 			 int vid = set.getInt("idvisitor");
-			 visitors v = new visitors(vname, vemail, host, edate, vid);
+			 visitors v = new visitors(vname, vemail, host, vreason, vid, edate, hDesk, hmail);
 			 
 			 list.add(v);
 		 }
