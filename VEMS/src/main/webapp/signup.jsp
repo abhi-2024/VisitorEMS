@@ -15,7 +15,7 @@
 <title>Sign Up</title>
 </head>
 
-<body>
+<body style="background-image: url('img/bg-01.jpg'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="navbar.jsp"%>
 	<div class="d-flex align-items-center" style="height: 80vh;">
 		<div class="container">
@@ -23,10 +23,9 @@
 				<div class="col-md-4 offset-4">
 					<div class="card">
 
-						<div class="card-header text-white text-center"
-							style="background-color: #212529;">
-							<span class="fa fa-sign-in fa-2x"></span>
-							<h2>Sign Up</h2>
+						<div class="card-header text-center" style="background:linear-gradient(to bottom left, #ff3399 0%, #33ccff 100%);">
+							
+							<h2><span class="fa fa-sign-in"></span> Sign Up</h2>
 						</div>
 						<div class="card-body">
 
@@ -58,7 +57,7 @@
 									<input type="checkbox" required name="adminCheck"
 										class="form-check-input" id="exampleCheck1"> <label
 										class="form-check-label" for="exampleCheck1"><a
-										target="_blank" href="Terms.html" class="link-warning">Agree
+										target="_blank" href="Terms.html" class="link-dark">Agree
 											to terms & conditions</a></label>
 								</div>
 								<br>

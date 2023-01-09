@@ -1,3 +1,5 @@
+<%@page import="com.entities.reasons"%>
+<%@page import="com.dao.reasonDao"%>
 <%@page import="com.helper.connectionProvider"%>
 <%@page import="com.dao.employeeDao"%>
 <%@page import="java.util.ArrayList"%>
@@ -19,7 +21,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add visitor</title>
 </head>
-<body>
+<body style="background-image: url('img/bg-01.jpg'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="navbar.jsp"%>
 
 
@@ -36,10 +38,10 @@
 
 		<div class="col-md-6 offset-md-3">
 
-			<div class="card">
+			<div class="card" style="background-color: #9999ff;">
 
-				<h1 style="background-color: #212529;"
-					class="card-header text-white text-center">
+				<h1 style="background-color: transparent;"
+					class="card-header  text-center">
 					<i class="fa-solid fa-users"></i> New Visitor Entry
 				</h1>
 
@@ -57,7 +59,7 @@
 				}
 				session.removeAttribute("vMsg");
 				%>
-				<div class="card-body">
+				<div class="card-body" style="background-color: white;">
 					<form id="visitor-form" action="newEntryServ" method="post">
 
 
@@ -118,11 +120,12 @@
 								required name="vReason" class="form-select" id="reason">
 								<option selected="selected" disabled="disabled">--:
 									Please Select :--</option>
-								<option value="Client Meeting">Client Meeting</option>
-								<option value="Interview">Interview</option>
-								<option value="Item Delivery">Item Delivery</option>
-								<option value="Authorised Visit">Authorized Visit</option>
-								<option value="Others">Others</option>
+									<%
+									reasonDao dao = new reasonDao(connectionProvider.getConnection());
+						            ArrayList<reasons> list = dao.fetchAllReasons();
+						            for(reasons rr : list){ %>
+						            <option value="<%= rr.getrName() %>"><%= rr.getrName() %>
+						            <% } %>
 							</select>
 						</div>
 
@@ -151,13 +154,6 @@
 
 					</form>
 				</div>
-
-
-
-				<div class="card-footer"></div>
-
-
-
 			</div>
 
 		</div>

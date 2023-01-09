@@ -19,7 +19,7 @@
 <title>Login</title>
 </head>
 
-<body>
+<body style="background-image: url('img/bg-01.jpg'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="navbar.jsp"%>
 	<div class="d-flex align-items-center" style="height: 80vh;">
 		<div class="container">
@@ -27,10 +27,9 @@
 				<div class="col-md-4 offset-4">
 					<div class="card">
 
-						<div class="card-header text-white text-center"
-							style="background-color: #212529;">
-							<span class="fa fa-sign-in fa-2x"></span>
-							<h2>LOGIN</h2>
+						<div class="card-header  text-center"
+							style="background:linear-gradient(to bottom left, #ff3399 0%, #33ccff 100%);" >
+							<h2><span class="fa fa-sign-in"></span> LOGIN</h2>
 						</div>
 						<%						 
 						 if(m!=null){
@@ -59,14 +58,11 @@
 									<input name="loginPassword" type="password"
 										class="form-control" id="exampleInputPassword1">
 								</div>
-								<div class="text-center">
+								<div class="text-start">
 									<button type="submit" class="btn btn-primary">Login</button>
+									<a href="signup.jsp" class="btn btn-primary">Create an account</a>
 								</div>
 							</form>
-
-							<div class="text-center">
-								<a href="signup.jsp" class="link-primary">Create an account</a>
-							</div>
 						</div>
 					</div>
 				</div>

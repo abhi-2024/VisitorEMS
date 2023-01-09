@@ -8,9 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.dao.departmentDao;
 import com.dao.employeeDao;
+import com.entities.departments;
 import com.entities.employee;
+import com.entities.msg;
 import com.helper.connectionProvider;
 
 /**
@@ -39,20 +43,27 @@ public class newEmpServ extends HttpServlet {
 		String eDe = request.getParameter("empDesk");
 		String eA  = request.getParameter("empAtt");
 		
+		departmentDao d = new departmentDao(connectionProvider.getConnection());
+		
+		departments de = d.fetchFloor(eD);
+		
+		String floor = de.getdFloor();
+		
+		String Desk = "Desk_" + eDe;
+		String FD = Desk.concat(" Floor_"+floor);
+		
 		PrintWriter out = response.getWriter();
 		
-		out.println(eN);
-		out.println(eE);
-		out.println(eD);
-		out.println(eDe);
-		out.println(eA);
 		
-		employee e1 = new employee(eN, eE, eD, eDe, eA);
+		employee e1 = new employee(eN, eE, eD, FD, eA);
 		
 		employeeDao dao = new employeeDao(connectionProvider.getConnection());
 		
 		if(dao.saveEmployee(e1)) {
-			out.print("Done!");
+			msg m = new msg("Employee Added!!", "success", "alert-success");
+			HttpSession s = request.getSession();
+			s.setAttribute("EMSG", m);
+			response.sendRedirect("addEmployee.jsp");
 		}else {
 			out.print("error");
 		}

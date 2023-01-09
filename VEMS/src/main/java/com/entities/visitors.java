@@ -123,7 +123,7 @@ public class visitors {
 	
 	
 	public visitors(String vname, String gender, String vemail, String address, String vocc, String hname, String hocc,
-			String vreason, int vno, int vid, String eDate, String exDate) {
+			String vreason, int vno, int vid, String eDate, String exDate, String hDesk, String hEmail) {
 		super();
 		this.vname = vname;
 		this.gender = gender;
@@ -137,6 +137,8 @@ public class visitors {
 		this.vid = vid;
 		this.eDate = eDate;
 		this.exDate = exDate;
+		this.hDesk = hDesk;
+		this.hEmail = hEmail;
 	}
 
 
@@ -156,6 +158,7 @@ public class visitors {
 		this.vno = vno;
 		this.vid = vid;
 		this.eDate = eDate;
+
 	}
 
 

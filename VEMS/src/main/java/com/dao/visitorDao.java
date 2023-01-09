@@ -122,6 +122,8 @@ public class visitorDao {
 			v.setVno(set.getInt("visitorVisitNo"));
 			v.seteDate(set.getString("visitorEntryTime"));
 			v.setExDate(set.getString("visitorExitTime"));
+			v.sethDesk(set.getString("hostDesk"));
+			v.sethEmail(set.getString("hostEmail"));
 		}
 	} catch (Exception e) {
 		// TODO: handle exception

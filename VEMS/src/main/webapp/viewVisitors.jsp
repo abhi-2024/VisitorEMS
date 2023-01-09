@@ -18,17 +18,9 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Visitors</title>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-	
-</script>
-<script type="text/javascript">
-	(function() {
-		emailjs.init("muaJHT6SDaiHcpwob");
-	})();
-</script>
+
 </head>
-<body>
+<body style="background-image: url('img/bg-01.jpg'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="navbar.jsp"%>
 	<%
 	admin ami = (admin) session.getAttribute("currentUser");
@@ -36,8 +28,8 @@
 	%>
 	<div class="d-flex align-items-center mt-5" style="height: 80vh;">
 		<div class="container">
-			<table class="table table-hover">
-				<thead style="background-color: #63e6be">
+			<table class="table table-hover" style="background: white;">
+				<thead style="background-color: #9999ff;">
 					<tr>
 						<th scope="col">S.No</th>
 						<th scope="col">Visitor's Name</th>
@@ -47,9 +39,10 @@
 						<th scope="col"></th>
 						<th scope="col"></th>
 						<th scope="col"></th>
+					
 					</tr>
 				</thead>
-				<tbody>
+				<tbody style="background-color: white;">
 					<%
 					int count = 1;
 
@@ -80,8 +73,8 @@
 								<input style="display: none;" type="text" name="id"
 									value="<%=vv.getVid()%>">
 								<button title="Delete Entry"
-									style="background-color: white; color: red;" type="submit"
-									class="btn btn-secondary">
+									style="background-color: white; 	 color: red;" type="submit"
+									class="btn btn-primary">
 									<i class="fa-solid fa-trash"></i>
 								</button>
 							</form>
@@ -89,24 +82,7 @@
 						</td>
 
 						<td>
-							<form>
-							 <input style="display: none;" type="text" id="visitorID" value="<%= vv.getVid() %>">
-							 <input style="display: none;" type="text" id="hostName" value="<%= vv.getHname() %>">
-							 <input style="display: none;" type="text" id="hostDesk" value="<%= vv.gethDesk()%>">
-							 <input style="display: none;" type="text" id="toEmail" value="<%= vv.getVemail()%>">
-							 <input style="display: none;" type="text" id="to_name" value="<%= vv.getHname() %>">
-							 
-							 <input style="display: none;" type="text" id="hostNamee" value="<%= vv.getHname() %>">
-							 <input style="display: none;" type="text" id="visitorIDE" value="<%= vv.getVid() %>">
-							 <input style="display: none;" type="text" id="visitorName" value="<%= vv.getVname() %>">
-							 <input style="display: none;" type="text" id="visitReason" value="<%= vv.getVreason() %>">
-							 <input style="display: none;" type="text" id="entryTime" value="<%= vv.geteDate() %>">
-							 <input style="display: none;" type="text" id="to_emailE" value="<%= vv.gethEmail() %>">						
-								<button type="submit" onclick="sendMail(event)" title="Generate Mail"
-									style="background-color: white;" class="btn btn-secondary">
-									<i style="color: #183153" class="fa-solid fa-envelope"></i>
-								</button>
-							</form>
+							
 						</td>
 					</tr>
 					<%
@@ -144,34 +120,6 @@
 		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
 		crossorigin="anonymous"></script>
 		
-	<script type="text/javascript">
 	
-	 function sendMail(event) {
-		event.preventDefault();
-		var params = {
-				visitorID : document.getElementById("visitorID").value,
-		        hostName : document.getElementById("hostName").value,
-		        hostDesk : document.getElementById("hostDesk").value,
-		        to_email : document.getElementById("toEmail").value,				
-		};
-		var params2 = {
-				to_name : document.getElementById("hostNamee").value,
-				VisitorID : document.getElementById("visitorIDE").value,
-				visitorName : document.getElementById("visitorName").value,
-				visitReason : document.getElementById("visitReason").value,
-				entryTime : document.getElementById("entryTime").value,
-				To_Email : document.getElementById("to_emailE").value,				
-		};
-		emailjs.send("service_3rilxgm","template_xa3t1ro",params).then(function(res){
-			console.log("success",res.status);
-			alert("Success!");	
-		});
-	    emailjs.send("service_3rilxgm","template_q837rmw",params2).then(function(res){
-			console.log("success!!",res.status);
-			alert("Success!");
-
-		})
-	}
-	</script>
 </body>
 </html>

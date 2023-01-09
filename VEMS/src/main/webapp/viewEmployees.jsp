@@ -17,8 +17,9 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	
 </head>
-<body>
+<body style="background-image: url('img/bg-01.jpg'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="navbar.jsp"%>
 	<h1 class="text-center mt-3">
 		<u>Employees Details</u>
@@ -37,7 +38,7 @@
 						<%
 						int count = 1;
 						%>
-						<thead style="background-color: #63e6be;">
+						<thead style="background-color: #9999ff;">
 							<tr>
 								<th scope="col">SNo</th>
 								<th scope="col">ID</th>
@@ -48,10 +49,10 @@
 								<th scope="col">Attendance</th>
 								<th scope="col"></th>
 								<th scope="col"></th>
-								<th scope="col"></th>
+								
 							</tr>
 						</thead>
-						<tbody>
+						<tbody style="background-color: white;">
 							<tr>
 								<%
 								employeeDao dao = new employeeDao(connectionProvider.getConnection());
@@ -135,4 +136,6 @@
 
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	
+	
 </html>

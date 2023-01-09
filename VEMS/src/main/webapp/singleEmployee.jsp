@@ -13,8 +13,18 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	
+	<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+	
+</script>
+<script type="text/javascript">
+	(function() {
+		emailjs.init("z3YhGdVCWACQlXDGa");
+	})();
+</script>
 </head>
-<body>
+<body style="background-image: url('img/bg-01.jpg'); background-repeat: no-repeat; background-size: cover;">
 	<%@include file="navbar.jsp"%>
 
 	<%
@@ -27,8 +37,8 @@
 			<div class="col-md-5 offset-3">
 				<div class="card">
 
-					<div class="card-header text-white text-center"
-						style="background-color: #212529;">
+					<div class="card-header text-center"
+						style="background-color: #9999ff; 	">
 						<h2 id="vheading">
 							<i class="fa-solid fa-users-viewfinder"></i> Employee's Detail
 						</h2>
@@ -67,6 +77,23 @@
 										<th scope="row">Attendance</th>
 										<td><%=e5.getEatt()%></td>
 									</tr>
+									<tr>
+									<th scope="row"> Send Mail Details</th>
+									
+									 <td>
+									      <form>
+											 <input style="display: none;" type="text" value="<%=e5.getEname()%>" id="toName">
+											 <input style="display: none;" type="text" value="<%=e5.getEid()%>" id="ID">
+											 <input style="display: none;" type="text" value="<%=e5.getEdept()%>" id="deptt">
+											 <input style="display: none;" type="text" value="<%=e5.getEdesk()%>" id="deskk">
+											 <input style="display: none;" type="text" value="<%=e5.getEemail()%>" id="toEmail">
+				    						 <button title="Send Employee Details" class="btn btn-secondary" onclick="sendEmail(event)" style="background-color: white;">
+														<i style="color: blue;" class="fa-solid fa-envelope"></i>
+											 </button>
+									      </form>
+									 </td>
+									 
+									</tr>
 								</tbody>
 							</table>
 						</div>
@@ -94,7 +121,8 @@
 											<th scope="row">Department</th>
 											<td><select required name="dep" class="form-select"
 												id="hostOccupation">
-													<option selected="selected" value="<%=e5.getEdept() %>" style="display: none;"><%= e5.getEdept() %></option>
+													<option selected="selected" value="<%=e5.getEdept()%>"
+														style="display: none;"><%=e5.getEdept()%></option>
 													<option value="Accounts">Accounts</option>
 													<option value="Management">Management</option>
 													<option value="Research & Development">Research &
@@ -114,7 +142,8 @@
 										<tr>
 											<th scope="row">Attendance</th>
 											<td><select name="att" class="form-select">
-													<option selected="selected" style="display: none" value="<%=e5.getEatt()%>"><%=e5.getEatt() %></option>
+													<option selected="selected" style="display: none"
+														value="<%=e5.getEatt()%>"><%=e5.getEatt()%></option>
 													<option value="Present">Present</option>
 													<option value="Absent">Absent</option>
 											</select></td>
@@ -122,7 +151,8 @@
 
 									</tbody>
 								</table>
-								<input type="number" style="display: none;" name="id" value="<%= e5.getEid() %>">
+								<input type="number" style="display: none;" name="id"
+									value="<%=e5.getEid()%>">
 								<div class="text-center">
 									<button class="btn btn-primary">Save</button>
 								</div>
@@ -131,7 +161,7 @@
 						</div>
 					</div>
 
-					<div class="card-footer" style="background-color: #63e6be">
+					<div class="card-footer">
 						<div class="text-center">
 							<a class="btn btn-primary" id="backToView" href="backEServ">Back</a>
 							<button class="btn btn-secondary" type="submit" id="editBtn">Edit</button>
@@ -148,15 +178,15 @@
 	} else {
 	%>
 	<div class="container">
-	  <h1>Something went wrong !!!</h1>
-	  <h4>Kindly Relogin again!!</h4>
-	  <a class="btn btn-primary" href="login.jsp">LOGIN</a>
+		<h1>Something went wrong !!!</h1>
+		<h4>Kindly Relogin again!!</h4>
+		<a class="btn btn-primary" href="login.jsp">LOGIN</a>
 	</div>
-	
+
 	<%
 	}
 	%>
-	
+
 	<!-- scripts -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 	<script
@@ -178,7 +208,7 @@
 
 
 
-<script>
+	<script>
 	$(document).ready(function() {
 		let stat = false;
 		$('#editBtn').click(function() {
@@ -251,7 +281,24 @@
 		});
 	});
 </script>
-	
+
+<script type="text/javascript">
+function sendEmail(event){
+	event.preventDefault();
+	let params = {
+		to_name: document.getElementById("toName").value,
+		id: document.getElementById("ID").value,
+		dept: document.getElementById("deptt").value,
+		desk: document.getElementById("deskk").value,
+		to_email: document.getElementById("toEmail").value,
+	};
+	emailjs.send("service_i6lklq7","template_7h5xi86",params).then(function(res){
+		console.log("success",res.status);
+		alert("Mail sent!!");
+	})
+};
+</script>
+
 </body>
 
 </html>
