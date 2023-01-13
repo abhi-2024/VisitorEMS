@@ -62,9 +62,17 @@
 ![SignedOut](https://user-images.githubusercontent.com/87773225/212363339-3974cd6c-dcf2-436a-813b-7910ec9f2919.png)
 
 
+## 17. **_IMPORTANT NOTE_**
 
-
-
+* For sending mails the tool used is [emailJS](https://www.emailjs.com/)
+* To access the website admin loggin is mandatory
+ `Email: raunakojha60@gmail.com,
+  Password: just
+ `
+* Terms & Condition is a dummy produced using [Terms & Condition Generator](https://www.termsandconditionsgenerator.com/)
+* To access all the functionalities use the navigation bar
+  ![navigation bar](https://user-images.githubusercontent.com/87773225/212369484-9e6b2836-d53e-44d8-a35c-3825fb347c51.png)
+* To know more, kindly refer to the document containing detailed explanation of the project.  
 
 
 
