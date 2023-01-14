@@ -220,7 +220,7 @@
 
 				$('#backToView').hide();
 				
-				$('#vheading').text("Visitor's Profile Edit");
+				$('#vheading').text("Employee's Profile Edit");
 
 				stat = true;
 
@@ -232,7 +232,7 @@
 				
 				$('#backToView').show();
 
-				$('#vheading').text("Visitor's Detail");
+				$('#vheading').text("Employee's Detail");
 
 				stat = false;
 

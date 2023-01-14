@@ -132,7 +132,7 @@
 							                <input style="display: none;" type="text" id="visitorID" value="<%= v1.getVid() %>">
 							                <input style="display: none;" type="text" id="hostName" value="<%= v1.getHname() %>">
 						                    <input style="display: none;" type="text" id="hostDesk" value="<%= v1.gethDesk()%>">
-						     	            <input style="display: none;" type="text" id="toEmail" value="<%= v1.gethEmail()%>">
+						     	            <input style="display: none;" type="text" id="toEmail" value="<%= v1.getVemail()%>">
 							                <input style="display: none;" type="text" id="to_name" value="<%= v1.getHname() %>">
 							                
 							                <input style="display: none;" type="text" id="hostNamee" value="<%= v1.getHname() %>">
