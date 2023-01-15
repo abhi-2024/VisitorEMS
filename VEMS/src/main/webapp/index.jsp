@@ -33,7 +33,7 @@
 				designed so that visitor details can easily be managed and accessed.
 				It also helps to track the host's details to instantiate a meeting
 				with the visitor. Following are the functionalities that this
-	            the website provides to the user.
+	            the website provides to it's user.
 				<ol class="list-group list-group-flush list-group-numbered">
 				<li class="list-group-item"><a href="newVisitor.jsp" class="link-success lead" style="text-decoration: none;">Entry of new visitor</a></li>
                 <li class="list-group-item"><a href="viewVisitors.jsp" class="link-success lead" style="text-decoration: none;">View Visitors & Generate E-Card</a></li>
